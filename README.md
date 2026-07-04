@@ -3,7 +3,7 @@
 App de flashcards com frases, vocabulário, áudio e texto do curso CIMV,
 pronto para publicar **grátis** no GitHub Pages, com HTTPS automático
 (essencial para o áudio funcionar no iPhone pela internet).
---
+-----
 ## Estrutura
 
 ```
