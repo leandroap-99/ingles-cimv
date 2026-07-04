@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack Hannaford — Inglês CIMV</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f0;color:#1a1a18;min-height:100vh;padding:1.25rem 1rem 3rem}
+.app{max-width:560px;margin:0 auto}
+.top-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem}
+.top-header h1{font-size:17px;font-weight:700}
+.top-header span{font-size:12px;color:#aaa;background:#fff;border:1px solid #e5e5e0;border-radius:20px;padding:4px 10px}
+.part-selector{display:flex;gap:8px;margin-bottom:1.25rem;overflow-x:auto;padding-bottom:4px}
+.part-btn{flex-shrink:0;padding:7px 14px;border:1px solid #ddd;border-radius:20px;background:#fff;font-size:13px;font-family:inherit;color:#555;cursor:pointer;white-space:nowrap}
+.part-btn.active{background:#1a1a18;color:#fff;border-color:#1a1a18;font-weight:600}
+.section-tabs{display:flex;gap:6px;margin-bottom:1.25rem}
+.sec-tab{flex:1;padding:8px;border-radius:8px;border:1px solid #e0e8ff;background:#f0f5ff;font-size:13px;font-family:inherit;color:#3a5bbf;cursor:pointer;font-weight:500}
+.sec-tab.active{background:#3a5bbf;color:#fff;border-color:#3a5bbf}
+.mode-tabs{display:flex;gap:6px;margin-bottom:1.25rem}
+.tab{flex:1;padding:9px 4px;border:1px solid #ddd;border-radius:8px;background:#fff;font-size:13px;font-family:inherit;color:#555;cursor:pointer;text-align:center}
+.tab.active{background:#1a1a18;color:#fff;border-color:#1a1a18;font-weight:600}
+.progress-bar{height:4px;background:#e5e5e0;border-radius:2px;margin-bottom:1.5rem;overflow:hidden}
+.progress-fill{height:100%;background:#4a7cf0;border-radius:2px;transition:width 0.4s ease}
+.card-area{perspective:1000px;margin-bottom:1.25rem;min-height:240px}
+.card{width:100%;min-height:240px;position:relative;transform-style:preserve-3d;transition:transform 0.55s ease;cursor:pointer}
+.card.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;border:1px solid #e5e5e0;border-radius:18px;padding:1.75rem 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:240px;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.card-back{transform:rotateY(180deg);background:#f0f5ff;border-color:#c8d8ff}
+.card-label{font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.1em}
+.card-word{font-size:20px;font-weight:700;text-align:center;line-height:1.4}
+.card-example{font-size:13px;color:#999;text-align:center;line-height:1.5;font-style:italic;padding:0 .5rem}
+.card-translation{font-size:17px;font-weight:600;color:#1a4fa0;text-align:center;line-height:1.5}
+.card-hint{font-size:12px;color:#ccc}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.b-expressão{background:#fef3e2;color:#b45309}
+.b-phrasal{background:#fde8ff;color:#7c3aed}
+.b-substantivo{background:#e8f5e9;color:#1b5e20}
+.b-adjetivo{background:#e3f2fd;color:#0d47a1}
+.b-verbo{background:#fce4ec;color:#880e4f}
+.b-advérbio{background:#e8eaf6;color:#283593}
+.b-pronome{background:#e0f7fa;color:#006064}
+.b-frase{background:#fff3e0;color:#e65100}
+.play-btn{width:52px;height:52px;border-radius:50%;background:#e8f0fe;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.play-btn svg{fill:#4a7cf0;width:22px;height:22px}
+.play-btn.playing{background:#4a7cf0;animation:pulse .8s ease-in-out infinite}
+.play-btn.playing svg{fill:#fff}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.controls{display:flex;gap:10px;margin-bottom:1.25rem}
+.nav-btn{flex:1;padding:11px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#1a1a18;font-size:14px;font-family:inherit;cursor:pointer;font-weight:500}
+.nav-btn:disabled{opacity:.3;cursor:default}
+.result-btns{display:flex;gap:8px;margin-bottom:1.25rem}
+.result-btn{flex:1;padding:11px;border-radius:8px;border:none;font-size:14px;font-family:inherit;cursor:pointer;font-weight:600}
+.btn-wrong{background:#fde8e8;color:#c0392b}
+.btn-right{background:#e6f9f0;color:#1e8449}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem}
+.stat{background:#fff;border:1px solid #e5e5e0;border-radius:8px;padding:12px;text-align:center}
+.stat-num{font-size:24px;font-weight:700}
+.stat-lbl{font-size:11px;color:#aaa;margin-top:2px}
+.card-counter{text-align:center;font-size:13px;color:#bbb;margin-bottom:.5rem}
+.shuffle-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.shuffle-btn{padding:8px 14px;border:1px solid #ddd;border-radius:20px;background:#fff;font-size:13px;font-family:inherit;color:#555;cursor:pointer;display:flex;align-items:center;gap:6px}
+.shuffle-btn.on{background:#4a7cf0;color:#fff;border-color:#4a7cf0;font-weight:600}
+.order-info{font-size:12px;color:#bbb}
+.list-view{background:#fff;border:1px solid #e5e5e0;border-radius:14px;overflow:hidden;margin-bottom:1.25rem}
+.list-row{display:flex;align-items:center;gap:12px;padding:13px 14px;border-bottom:1px solid #f0f0ec;cursor:pointer}
+.list-row:last-child{border-bottom:none}
+.list-num{font-size:11px;color:#ccc;width:22px;flex-shrink:0;text-align:right}
+.list-info{flex:1}
+.list-word{font-size:14px;font-weight:600}
+.list-pt{font-size:12px;color:#777;margin-top:2px}
+.list-play{width:38px;height:38px;border-radius:50%;background:#e8f0fe;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;-webkit-tap-highlight-color:transparent}
+.list-play svg{fill:#4a7cf0;width:16px;height:16px}
+.text-box{background:#fff;border:1px solid #e5e5e0;border-radius:14px;padding:1.5rem;margin-bottom:1.25rem;line-height:2;font-size:15px}
+.text-box h3{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem}
+.full-audio-btn{width:100%;padding:12px;border:1px solid #c8d8ff;border-radius:10px;background:#f0f5ff;font-size:14px;font-family:inherit;color:#1a4fa0;font-weight:600;cursor:pointer;margin-bottom:1.25rem;-webkit-tap-highlight-color:transparent}
+.full-audio-btn.playing{background:#4a7cf0;color:#fff;border-color:#4a7cf0}
+.hl{background:#fff3cd;border-radius:3px;padding:1px 3px;cursor:pointer;font-weight:600;color:#92400e}
+.loading{text-align:center;padding:3rem 1rem;color:#aaa;font-size:14px}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="top-header">
+    <h1>📖 Jack Hannaford — CIMV</h1>
+    <span id="total-badge">—</span>
+  </div>
+  <div class="part-selector" id="part-selector"></div>
+  <div class="section-tabs">
+    <button class="sec-tab active" id="sec-sentences" onclick="setSection('sentences')">🎙 Frases</button>
+    <button class="sec-tab" id="sec-vocab" onclick="setSection('vocab')">📚 Vocabulário</button>
+  </div>
+  <div class="mode-tabs">
+    <button class="tab active" id="tab-cards" onclick="setMode('cards')">Cartões</button>
+    <button class="tab" id="tab-quiz" onclick="setMode('quiz')">Quiz</button>
+    <button class="tab" id="tab-list" onclick="setMode('list')">Lista</button>
+    <button class="tab" id="tab-text" onclick="setMode('text')">Texto</button>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
+
+  <div id="loading" class="loading">Carregando…</div>
+
+  <div id="cards-view" style="display:none">
+    <div class="card-area">
+      <div class="card" id="card" onclick="flipCard()">
+        <div class="card-face card-front">
+          <span id="front-badge"></span>
+          <button class="play-btn" id="play-btn" onclick="event.stopPropagation();playCurrent()">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <p class="card-word" id="front-word"></p>
+          <p class="card-example" id="front-example"></p>
+          <span class="card-hint">Toque para ver a tradução</span>
+        </div>
+        <div class="card-face card-back">
+          <span class="card-label">tradução</span>
+          <p class="card-translation" id="back-text"></p>
+          <span class="card-hint">Toque para voltar</span>
+        </div>
+      </div>
+    </div>
+    <div id="quiz-btns" class="result-btns" style="display:none">
+      <button class="result-btn btn-wrong" onclick="markResult(false)">✕ Errei</button>
+      <button class="result-btn btn-right" onclick="markResult(true)">✓ Acertei</button>
+    </div>
+    <div class="controls">
+      <button class="nav-btn" id="btn-prev" onclick="goTo(cur-1)">← Anterior</button>
+      <button class="nav-btn" id="btn-next" onclick="goTo(cur+1)">Próximo →</button>
+    </div>
+    <div class="stats" id="quiz-stats" style="display:none">
+      <div class="stat"><div class="stat-num" id="s-right">0</div><div class="stat-lbl">Acertos</div></div>
+      <div class="stat"><div class="stat-num" id="s-wrong">0</div><div class="stat-lbl">Erros</div></div>
+      <div class="stat"><div class="stat-num" id="s-left">0</div><div class="stat-lbl">Restantes</div></div>
+    </div>
+    <div class="shuffle-bar" id="shuffle-bar">
+      <button class="shuffle-btn" id="shuffle-btn" onclick="toggleShuffle()">🔀 Embaralhar</button>
+      <span class="order-info" id="order-info"></span>
+    </div>
+    <p class="card-counter" id="counter"></p>
+  </div>
+
+  <div id="list-view" style="display:none" class="list-view"></div>
+  <div id="text-view" style="display:none">
+    <div class="text-box">
+      <h3>Texto completo — toque nas palavras destacadas</h3>
+      <button class="full-audio-btn" id="full-audio-btn" onclick="toggleFullAudio(this)">▶ Ouvir texto completo</button>
+      <div id="text-content"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════
+//  CONFIG — caminhos no servidor
+// ══════════════════════════════════════════════════════════
+var DATA_URL  = "data/";   // pasta com manifest.json + partXX.json
+var AUDIO_URL = "audio/";  // pasta com audio/partXX/<id>.mp3 e full.mp3
+
+// ══════════════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════════════
+var PARTS = [];          // preenchido pelo manifest
+var loadedParts = {};    // cache dos dados de cada parte (JSON)
+var activePart = 0, section = "sentences", mode = "cards", cur = 0, results = {}, flipped = false;
+var shuffled = false, shuffleOrder = [];
+
+// ══════════════════════════════════════════════════════════
+//  AUDIO — usa <audio> HTML apontando para URL do servidor
+//  (simples e funciona em iOS/PC porque não é base64)
+// ══════════════════════════════════════════════════════════
+var audioEl = new Audio();
+var fullEl = new Audio();
+var fullPlaying = false;
+
+function stopAll(btn) {
+  try { audioEl.pause(); audioEl.currentTime = 0; } catch(e){}
+  try { fullEl.pause(); fullEl.currentTime = 0; } catch(e){}
+  if (fullPlaying) {
+    fullPlaying = false;
+    var fb = document.getElementById("full-audio-btn");
+    if (fb) { fb.innerHTML = "▶ Ouvir texto completo"; fb.classList.remove("playing"); }
+  }
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  var pb = document.getElementById("play-btn");
+  if (pb) pb.classList.remove("playing");
+  if (btn) btn.classList.remove("playing");
+}
+
+function playSentence(partId, id, btn) {
+  stopAll(btn);
+  audioEl.src = AUDIO_URL + partId + "/" + id + ".mp3";
+  if (btn) {
+    btn.classList.add("playing");
+    audioEl.onended = function() { btn.classList.remove("playing"); };
+    audioEl.onerror = function() { btn.classList.remove("playing"); };
+  }
+  audioEl.play().catch(function(){ if (btn) btn.classList.remove("playing"); });
+}
+
+function toggleFullAudio(btn) {
+  if (fullPlaying) { stopAll(null); return; }
+  stopAll(null);
+  var partId = PARTS[activePart].id;
+  fullEl.src = AUDIO_URL + partId + "/full.mp3";
+  fullPlaying = true;
+  btn.innerHTML = "⏹ Parar";
+  btn.classList.add("playing");
+  fullEl.onended = function() {
+    fullPlaying = false;
+    btn.innerHTML = "▶ Ouvir texto completo";
+    btn.classList.remove("playing");
+  };
+  fullEl.onerror = function() {
+    fullPlaying = false;
+    btn.innerHTML = "▶ Ouvir texto completo";
+    btn.classList.remove("playing");
+  };
+  fullEl.play().catch(function(){
+    fullPlaying = false;
+    btn.innerHTML = "▶ Ouvir texto completo";
+    btn.classList.remove("playing");
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  TTS para vocabulário — voz melhorada
+// ══════════════════════════════════════════════════════════
+var bestVoice = null;
+function loadBestVoice() {
+  if (!window.speechSynthesis) return;
+  var voices = window.speechSynthesis.getVoices();
+  if (!voices.length) return;
+  var pref = ["Samantha","Karen","Moira","Google US English","Microsoft Aria Online (Natural)","Microsoft Jenny Online (Natural)"];
+  for (var i = 0; i < pref.length; i++)
+    for (var j = 0; j < voices.length; j++)
+      if (voices[j].name === pref[i]) { bestVoice = voices[j]; return; }
+  for (var j = 0; j < voices.length; j++)
+    if (voices[j].lang === "en-US") { bestVoice = voices[j]; return; }
+  for (var j = 0; j < voices.length; j++)
+    if (voices[j].lang.indexOf("en") === 0) { bestVoice = voices[j]; return; }
+}
+if (window.speechSynthesis) {
+  loadBestVoice();
+  window.speechSynthesis.onvoiceschanged = loadBestVoice;
+}
+
+function speakTTS(text, btn) {
+  if (!window.speechSynthesis) return;
+  stopAll(btn);
+  setTimeout(function() {
+    if (!bestVoice) loadBestVoice();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US"; u.rate = 0.82; u.pitch = 1.05;
+    if (bestVoice) u.voice = bestVoice;
+    if (btn) {
+      btn.classList.add("playing");
+      u.onend = function() { btn.classList.remove("playing"); };
+      u.onerror = function() { btn.classList.remove("playing"); };
+    }
+    window.speechSynthesis.speak(u);
+  }, 80);
+}
+
+// ══════════════════════════════════════════════════════════
+//  DATA LOADING
+// ══════════════════════════════════════════════════════════
+function loadManifest() {
+  return fetch(DATA_URL + "manifest.json")
+    .then(function(r){ return r.json(); })
+    .then(function(m){ PARTS = m.parts; });
+}
+
+function loadPart(idx) {
+  var partId = PARTS[idx].id;
+  if (loadedParts[partId]) return Promise.resolve(loadedParts[partId]);
+  return fetch(DATA_URL + partId + ".json")
+    .then(function(r){ return r.json(); })
+    .then(function(data){ loadedParts[partId] = data; return data; });
+}
+
+function partData() { return loadedParts[PARTS[activePart].id]; }
+function items() { return section === "sentences" ? partData().sentences : partData().vocab; }
+
+// ══════════════════════════════════════════════════════════
+//  SHUFFLE
+// ══════════════════════════════════════════════════════════
+function buildOrder(len) {
+  shuffleOrder = [];
+  for (var i = 0; i < len; i++) shuffleOrder.push(i);
+  if (shuffled) {
+    for (var i = shuffleOrder.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = shuffleOrder[i]; shuffleOrder[i] = shuffleOrder[j]; shuffleOrder[j] = t;
+    }
+  }
+}
+function currentItem() {
+  var list = items();
+  var idx = shuffleOrder.length === list.length ? shuffleOrder[cur] : cur;
+  return list[idx];
+}
+function toggleShuffle() {
+  shuffled = !shuffled;
+  var btn = document.getElementById("shuffle-btn");
+  btn.classList.toggle("on", shuffled);
+  btn.textContent = shuffled ? "🔀 Embaralhado" : "🔀 Embaralhar";
+  cur = 0; results = {};
+  buildOrder(items().length);
+  flipped = false;
+  document.getElementById("card").classList.remove("flipped");
+  render();
+}
+
+// ══════════════════════════════════════════════════════════
+//  PLAYBACK / NAV
+// ══════════════════════════════════════════════════════════
+function playCurrent() {
+  var it = currentItem();
+  var btn = document.getElementById("play-btn");
+  if (section === "sentences" && it.id) {
+    playSentence(PARTS[activePart].id, it.id, btn);
+  } else {
+    speakTTS(section === "sentences" ? it.en : it.word, btn);
+  }
+}
+
+function goTo(idx) {
+  stopAll(null);
+  if (idx < 0 || idx >= items().length) return;
+  cur = idx; flipped = false;
+  document.getElementById("card").classList.remove("flipped");
+  render();
+}
+function flipCard() {
+  flipped = !flipped;
+  document.getElementById("card").classList.toggle("flipped", flipped);
+}
+function markResult(c) {
+  results[cur] = c;
+  if (cur < items().length - 1) goTo(cur + 1);
+  updateStats();
+}
+
+// ══════════════════════════════════════════════════════════
+//  SECTION / MODE / PART
+// ══════════════════════════════════════════════════════════
+function setSection(s) {
+  section = s; cur = 0; results = {}; flipped = false; shuffleOrder = [];
+  stopAll(null);
+  document.getElementById("card").classList.remove("flipped");
+  document.getElementById("sec-sentences").classList.toggle("active", s === "sentences");
+  document.getElementById("sec-vocab").classList.toggle("active", s === "vocab");
+  document.getElementById("shuffle-bar").style.display = s === "sentences" ? "flex" : "none";
+  if (mode === "text" && s === "vocab") { setMode("cards"); return; }
+  if (mode === "list") renderList();
+  render();
+}
+
+function setMode(m) {
+  mode = m;
+  stopAll(null);
+  ["cards","quiz","list","text"].forEach(function(id) {
+    document.getElementById("tab-" + id).classList.toggle("active", id === m);
+  });
+  document.getElementById("cards-view").style.display = (m === "cards" || m === "quiz") ? "" : "none";
+  document.getElementById("list-view").style.display = m === "list" ? "" : "none";
+  document.getElementById("text-view").style.display = m === "text" ? "" : "none";
+  document.getElementById("quiz-btns").style.display = m === "quiz" ? "flex" : "none";
+  document.getElementById("quiz-stats").style.display = m === "quiz" ? "grid" : "none";
+  if (m === "list") renderList();
+  if (m === "text") renderText();
+  render();
+}
+
+function setPart(idx) {
+  document.getElementById("loading").style.display = "block";
+  document.getElementById("cards-view").style.display = "none";
+  loadPart(idx).then(function() {
+    activePart = idx; cur = 0; results = {}; flipped = false; shuffleOrder = [];
+    stopAll(null);
+    document.getElementById("card").classList.remove("flipped");
+    document.querySelectorAll(".part-btn").forEach(function(b, i) { b.classList.toggle("active", i === idx); });
+    document.getElementById("total-badge").textContent = PARTS[idx].label;
+    document.getElementById("loading").style.display = "none";
+    setMode(mode);
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  RENDER
+// ══════════════════════════════════════════════════════════
+function badgeHTML(type) {
+  var cls = type === "phrasal verb" ? "b-phrasal" : "b-" + type;
+  return '<span class="badge ' + cls + '">' + type + '</span>';
+}
+
+function render() {
+  if (!partData()) return;
+  var list = items(); if (!list.length) return;
+  if (shuffleOrder.length !== list.length) buildOrder(list.length);
+  var it = currentItem();
+  var isSen = section === "sentences";
+  document.getElementById("front-badge").innerHTML = badgeHTML(isSen ? "frase" : it.type);
+  document.getElementById("front-word").textContent = isSen ? it.en : it.word;
+  var ex = document.getElementById("front-example");
+  ex.textContent = isSen ? "" : it.example;
+  ex.style.display = isSen ? "none" : "";
+  document.getElementById("back-text").textContent = it.pt;
+  document.getElementById("counter").textContent = (cur + 1) + " de " + list.length;
+  document.getElementById("prog").style.width = ((cur + 1) / list.length * 100) + "%";
+  document.getElementById("btn-prev").disabled = cur === 0;
+  document.getElementById("btn-next").disabled = cur === list.length - 1;
+  document.getElementById("order-info").textContent =
+    (shuffled && isSen) ? ("carta " + (shuffleOrder[cur] + 1) + " (original)") : "";
+  if (mode === "quiz") updateStats();
+}
+
+function updateStats() {
+  var vals = Object.values(results);
+  document.getElementById("s-right").textContent = vals.filter(function(v){return v;}).length;
+  document.getElementById("s-wrong").textContent = vals.filter(function(v){return !v;}).length;
+  document.getElementById("s-left").textContent = items().length - vals.length;
+}
+
+function renderList() {
+  var div = document.getElementById("list-view");
+  div.innerHTML = "";
+  var list = items();
+  var isSen = section === "sentences";
+  var partId = PARTS[activePart].id;
+  list.forEach(function(it, i) {
+    var row = document.createElement("div");
+    row.className = "list-row";
+    var word = isSen ? it.en : it.word;
+    row.innerHTML = '<span class="list-num">' + (i + 1) + '</span>'
+      + '<div class="list-info"><div class="list-word">' + word + '</div><div class="list-pt">' + it.pt + '</div></div>'
+      + '<button class="list-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>';
+    (function(item, isS) {
+      row.querySelector(".list-play").addEventListener("click", function(e) {
+        e.stopPropagation();
+        if (isS && item.id) playSentence(partId, item.id, null);
+        else speakTTS(isS ? item.en : item.word, null);
+      });
+    })(it, isSen);
+    row.addEventListener("click", function() { setMode("cards"); goTo(i); });
+    div.appendChild(row);
+  });
+}
+
+function renderText() {
+  var part = partData();
+  var html = part.text;
+  var sorted = part.vocab.slice().sort(function(a, b) { return b.word.length - a.word.length; });
+  sorted.forEach(function(v) {
+    var esc = v.word.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+    var re = new RegExp("(" + esc + ")", "gi");
+    var idx = part.vocab.indexOf(v);
+    html = html.replace(re, '<span class="hl" data-idx="' + idx + '" title="' + v.pt + '">$1</span>');
+  });
+  var div = document.getElementById("text-content");
+  div.innerHTML = html;
+  div.querySelectorAll(".hl").forEach(function(el) {
+    el.addEventListener("click", function() {
+      setSection("vocab"); setMode("cards");
+      goTo(parseInt(el.dataset.idx));
+    });
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════════════════════
+function init() {
+  loadManifest().then(function() {
+    var sel = document.getElementById("part-selector");
+    PARTS.forEach(function(p, i) {
+      var btn = document.createElement("button");
+      btn.className = "part-btn" + (i === 0 ? " active" : "");
+      btn.textContent = p.label;
+      btn.onclick = function() { setPart(i); };
+      sel.appendChild(btn);
+    });
+    setPart(0);
+  }).catch(function(e) {
+    document.getElementById("loading").textContent = "Erro ao carregar dados. Verifique o servidor.";
+  });
+}
+init();
+</script>
+</body>
+</html>
