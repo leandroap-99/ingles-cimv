@@ -1,0 +1,43 @@
+{
+  "id": "part04",
+  "label": "Part 04",
+  "text": "\"He works hard sewing and mending clothes for the saints and angels, but even so, he sometimes doesn't have enough money to eat.\" \"And did he send me a message?\", she asked. \"Yes, he did! That is why I've come here. He asked me to bring back some money for him, so that he can spend his days in paradise more comfortably.\" On hearing this, the poor woman's heart almost broke with pity.",
+  "sentences": [
+    { "id": "33", "en": "\"He works hard sewing and mending clothes for the saints and angels,", "pt": "\"Ele trabalha duro costurando e remendando roupas para as santidades e os anjos," },
+    { "id": "34", "en": "but even so, he sometimes doesn't have enough money to eat.\"", "pt": "mas mesmo assim, ele às vezes não tem dinheiro o suficiente para comer.\"" },
+    { "id": "35", "en": "\"And did he send me a message?\", she asked.", "pt": "\"E ele me mandou uma mensagem?\", ela perguntou." },
+    { "id": "36", "en": "\"Yes, he did!", "pt": "\"Sim, ele mandou!" },
+    { "id": "37", "en": "That is why I've come here.", "pt": "É por isso que eu vim aqui." },
+    { "id": "38", "en": "He asked me to bring back some money for him,", "pt": "Ele me pediu para trazer de volta um pouco de dinheiro para ele," },
+    { "id": "39", "en": "so that he can spend his days in paradise more comfortably.\"", "pt": "para que / de modo que ele possa passar seus dias no paraíso mais confortavelmente.\"" },
+    { "id": "40", "en": "On hearing this, the poor woman's heart almost broke with pity.", "pt": "Ao ouvir isso, o coração da pobre mulher quase quebrou com / de piedade." }
+  ],
+  "vocab": [
+    { "word": "works hard", "pt": "trabalha duro / trabalha muito", "example": "He works hard sewing and mending clothes.", "type": "expressão" },
+    { "word": "sewing and mending clothes", "pt": "costurando e remendando roupas", "example": "He works hard sewing and mending clothes for the saints.", "type": "expressão" },
+    { "word": "sewing", "pt": "costurando / costurar", "example": "sewing and mending clothes.", "type": "verbo" },
+    { "word": "mending", "pt": "remendando / consertando", "example": "sewing and mending clothes.", "type": "verbo" },
+    { "word": "clothes", "pt": "roupas", "example": "sewing and mending clothes.", "type": "substantivo" },
+    { "word": "the saints and angels", "pt": "as santidades e os anjos / os santos e anjos", "example": "for the saints and angels.", "type": "expressão" },
+    { "word": "but even so", "pt": "mas mesmo assim", "example": "but even so, he sometimes doesn't have enough money.", "type": "expressão" },
+    { "word": "sometimes", "pt": "às vezes", "example": "he sometimes doesn't have enough money to eat.", "type": "advérbio" },
+    { "word": "enough money", "pt": "dinheiro suficiente / dinheiro o bastante", "example": "he doesn't have enough money to eat.", "type": "expressão" },
+    { "word": "to eat", "pt": "para comer", "example": "enough money to eat.", "type": "verbo" },
+    { "word": "send me a message", "pt": "me mandar uma mensagem", "example": "And did he send me a message?", "type": "expressão" },
+    { "word": "she asked", "pt": "ela perguntou", "example": "\"And did he send me a message?\", she asked.", "type": "expressão" },
+    { "word": "he did", "pt": "ele mandou / ele fez (resposta afirmativa)", "example": "Yes, he did!", "type": "expressão" },
+    { "word": "That is why", "pt": "É por isso que / Por essa razão", "example": "That is why I've come here.", "type": "expressão" },
+    { "word": "I've come here", "pt": "eu vim aqui / eu vim para cá", "example": "That is why I've come here.", "type": "expressão" },
+    { "word": "asked me to", "pt": "me pediu para", "example": "He asked me to bring back some money.", "type": "expressão" },
+    { "word": "bring back", "pt": "trazer de volta", "example": "He asked me to bring back some money for him.", "type": "phrasal verb" },
+    { "word": "some money", "pt": "um pouco de dinheiro / algum dinheiro", "example": "bring back some money for him.", "type": "expressão" },
+    { "word": "so that", "pt": "para que / de modo que", "example": "so that he can spend his days in paradise.", "type": "expressão" },
+    { "word": "spend his days", "pt": "passar seus dias", "example": "so that he can spend his days in paradise.", "type": "expressão" },
+    { "word": "paradise", "pt": "paraíso", "example": "he can spend his days in paradise.", "type": "substantivo" },
+    { "word": "more comfortably", "pt": "mais confortavelmente", "example": "spend his days in paradise more comfortably.", "type": "advérbio" },
+    { "word": "on hearing this", "pt": "ao ouvir isso", "example": "On hearing this, the poor woman's heart almost broke.", "type": "expressão" },
+    { "word": "the poor woman's heart", "pt": "o coração da pobre mulher", "example": "the poor woman's heart almost broke with pity.", "type": "expressão" },
+    { "word": "almost broke", "pt": "quase quebrou / quase se partiu", "example": "her heart almost broke with pity.", "type": "expressão" },
+    { "word": "with pity", "pt": "com / de piedade / de compaixão", "example": "her heart almost broke with pity.", "type": "expressão" }
+  ]
+}
