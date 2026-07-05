@@ -3,51 +3,301 @@
   "label": "Part 02",
   "text": "In those days, there also lived an old soldier called Jack Hannaford. His coat was old and he was poor, but nobody thought that Jack Hannaford was stupid. He was sly like a fox. When he left the army, he walked all around the country, looking for ways to play his tricks. After he had traveled for some time, he came across the farm belonging to the pair. He knocked on the door of the house, and a moment later, the wife answered. She looked him up and down, quite astonished, because few strangers were able to make the difficult journey to their home. \"Where did you come from?\" she asked.",
   "sentences": [
-    { "id": "009", "en": "In those days, there also lived an old soldier called Jack Hannaford.", "pt": "Naqueles dias, existia também um velho soldado chamado Jack Hannaford." },
-    { "id": "010", "en": "His coat was old and he was poor,", "pt": "Seu casaco era velho e ele era pobre," },
-    { "id": "011", "en": "but nobody thought that Jack Hannaford was stupid.", "pt": "mas ninguém pensava que Jack Hannaford era estúpido / burro / bobo." },
-    { "id": "012", "en": "He was sly like a fox.", "pt": "Ele era astuto / malicioso como uma raposa." },
-    { "id": "013", "en": "When he left the army,", "pt": "Quando ele deixou o exército," },
-    { "id": "014", "en": "he walked all around the country,", "pt": "ele caminhou por todo o país," },
-    { "id": "015", "en": "looking for ways to play his tricks.", "pt": "procurando por maneiras de fazer suas artimanhas." },
-    { "id": "016", "en": "After he had traveled for some time,", "pt": "Depois que ele tinha viajado por algum tempo," },
-    { "id": "017", "en": "he came across the farm belonging to the pair.", "pt": "ele deu de cara com a fazenda que pertencia ao casal." },
-    { "id": "018", "en": "He knocked on the door of the house,", "pt": "Ele bateu na porta da casa," },
-    { "id": "019", "en": "and a moment later, the wife answered.", "pt": "e pouco depois a esposa respondeu." },
-    { "id": "020", "en": "She looked him up and down, quite astonished,", "pt": "Ela olhou ele de cima a baixo, muito surpresa," },
-    { "id": "021", "en": "because few strangers were able to make the difficult journey to their home.", "pt": "porque poucos desconhecidos eram capazes de fazer a difícil jornada até a casa deles." },
-    { "id": "022", "en": "\"Where did you come from?\" she asked.", "pt": "\"De onde você veio?\" ela perguntou." }
+    {
+      "id": "009",
+      "en": "In those days, there also lived an old soldier called Jack Hannaford.",
+      "pt": "Naqueles dias, existia também um velho soldado chamado Jack Hannaford.",
+      "ptbr": "in dôuz dêis, dér ólsou livd an ôuld sôuldjer kóld djék rénaford"
+    },
+    {
+      "id": "010",
+      "en": "His coat was old and he was poor,",
+      "pt": "Seu casaco era velho e ele era pobre,",
+      "ptbr": "riz côut uóz ôuld end ri uóz púr"
+    },
+    {
+      "id": "011",
+      "en": "but nobody thought that Jack Hannaford was stupid.",
+      "pt": "mas ninguém pensava que Jack Hannaford era estúpido / burro / bobo.",
+      "ptbr": "bât nôubadi thót dét djék rénaford uóz stiúpid"
+    },
+    {
+      "id": "012",
+      "en": "He was sly like a fox.",
+      "pt": "Ele era astuto / malicioso como uma raposa.",
+      "ptbr": "ri uóz slái láik a fáks"
+    },
+    {
+      "id": "013",
+      "en": "When he left the army,",
+      "pt": "Quando ele deixou o exército,",
+      "ptbr": "uén ri left di ármi"
+    },
+    {
+      "id": "014",
+      "en": "he walked all around the country,",
+      "pt": "ele caminhou por todo o país,",
+      "ptbr": "ri uókt ól aráund de kântri"
+    },
+    {
+      "id": "015",
+      "en": "looking for ways to play his tricks.",
+      "pt": "procurando por maneiras de fazer suas artimanhas.",
+      "ptbr": "lúkin fór uêis tu plêi riz triks"
+    },
+    {
+      "id": "016",
+      "en": "After he had traveled for some time,",
+      "pt": "Depois que ele tinha viajado por algum tempo,",
+      "ptbr": "áfter ri réd tráveld fór sâm táim"
+    },
+    {
+      "id": "017",
+      "en": "he came across the farm belonging to the pair.",
+      "pt": "ele deu de cara com a fazenda que pertencia ao casal.",
+      "ptbr": "ri kêim akrós de fárm bilónguin tu de pér"
+    },
+    {
+      "id": "018",
+      "en": "He knocked on the door of the house,",
+      "pt": "Ele bateu na porta da casa,",
+      "ptbr": "ri nókt ón de dór ov de ráus"
+    },
+    {
+      "id": "019",
+      "en": "and a moment later, the wife answered.",
+      "pt": "e pouco depois a esposa respondeu.",
+      "ptbr": "end a môument lêiter de uáif ánserd"
+    },
+    {
+      "id": "020",
+      "en": "She looked him up and down, quite astonished,",
+      "pt": "Ela olhou ele de cima a baixo, muito surpresa,",
+      "ptbr": "chi lúkt rim âp end dáun kuáit astónisht"
+    },
+    {
+      "id": "021",
+      "en": "because few strangers were able to make the difficult journey to their home.",
+      "pt": "porque poucos desconhecidos eram capazes de fazer a difícil jornada até a casa deles.",
+      "ptbr": "bicóz fiú strêindjers uér êibol tu mêik de dificolt djârni tu dér rôum"
+    },
+    {
+      "id": "022",
+      "en": "\"Where did you come from?\" she asked.",
+      "pt": "\"De onde você veio?\" ela perguntou.",
+      "ptbr": "uér did iú kâm frâm? chi éskt"
+    }
   ],
   "vocab": [
-    { "word": "in those days", "pt": "naqueles dias / naquela época", "example": "In those days, there also lived an old soldier.", "type": "expressão" },
-    { "word": "there also lived", "pt": "existia também / vivia também", "example": "In those days, there also lived an old soldier.", "type": "expressão" },
-    { "word": "old soldier", "pt": "velho soldado", "example": "...an old soldier called Jack Hannaford.", "type": "substantivo" },
-    { "word": "coat", "pt": "casaco / sobretudo", "example": "His coat was old and he was poor.", "type": "substantivo" },
-    { "word": "poor", "pt": "pobre", "example": "His coat was old and he was poor.", "type": "adjetivo" },
-    { "word": "nobody", "pt": "ninguém", "example": "but nobody thought that Jack Hannaford was stupid.", "type": "pronome" },
-    { "word": "stupid", "pt": "estúpido / burro / bobo", "example": "nobody thought that Jack Hannaford was stupid.", "type": "adjetivo" },
-    { "word": "sly", "pt": "astuto / malicioso / esperto", "example": "He was sly like a fox.", "type": "adjetivo" },
-    { "word": "like a fox", "pt": "como uma raposa", "example": "He was sly like a fox.", "type": "expressão" },
-    { "word": "left the army", "pt": "deixou o exército", "example": "When he left the army...", "type": "expressão" },
-    { "word": "walked all around", "pt": "caminhou por todo / percorreu", "example": "he walked all around the country.", "type": "expressão" },
-    { "word": "looking for", "pt": "procurando por / em busca de", "example": "looking for ways to play his tricks.", "type": "expressão" },
-    { "word": "ways", "pt": "maneiras / formas / jeitos", "example": "looking for ways to play his tricks.", "type": "substantivo" },
-    { "word": "to play his tricks", "pt": "fazer suas artimanhas / pregar peças", "example": "looking for ways to play his tricks.", "type": "expressão" },
-    { "word": "for some time", "pt": "por algum tempo", "example": "After he had traveled for some time...", "type": "expressão" },
-    { "word": "came across", "pt": "deu de cara com / encontrou por acaso", "example": "he came across the farm belonging to the pair.", "type": "phrasal verb" },
-    { "word": "farm", "pt": "fazenda / sítio", "example": "he came across the farm belonging to the pair.", "type": "substantivo" },
-    { "word": "belonging to", "pt": "que pertencia a / pertencente a", "example": "the farm belonging to the pair.", "type": "expressão" },
-    { "word": "the pair", "pt": "o par / o casal", "example": "the farm belonging to the pair.", "type": "substantivo" },
-    { "word": "knocked on the door", "pt": "bateu na porta", "example": "He knocked on the door of the house.", "type": "expressão" },
-    { "word": "a moment later", "pt": "um momento depois / pouco depois", "example": "and a moment later, the wife answered.", "type": "expressão" },
-    { "word": "the wife", "pt": "a esposa / a mulher", "example": "a moment later, the wife answered.", "type": "substantivo" },
-    { "word": "answered", "pt": "respondeu / atendeu", "example": "the wife answered.", "type": "verbo" },
-    { "word": "looked him up and down", "pt": "olhou ele de cima a baixo", "example": "She looked him up and down, quite astonished.", "type": "expressão" },
-    { "word": "quite", "pt": "bastante / muito / completamente", "example": "She looked him up and down, quite astonished.", "type": "advérbio" },
-    { "word": "astonished", "pt": "surpreso / espantado / assombrado", "example": "quite astonished.", "type": "adjetivo" },
-    { "word": "few strangers", "pt": "poucos desconhecidos / poucos estranhos", "example": "because few strangers were able to make the journey.", "type": "expressão" },
-    { "word": "were able to", "pt": "eram capazes de / conseguiam", "example": "few strangers were able to make the journey.", "type": "expressão" },
-    { "word": "difficult journey", "pt": "jornada difícil / viagem difícil", "example": "the difficult journey to their home.", "type": "expressão" },
-    { "word": "where did you come from", "pt": "de onde você veio", "example": "\"Where did you come from?\" she asked.", "type": "expressão" }
+    {
+      "word": "in those days",
+      "pt": "naqueles dias / naquela época",
+      "example": "In those days, there also lived an old soldier.",
+      "type": "expressão",
+      "ptbr": "in dôuz dêis"
+    },
+    {
+      "word": "there also lived",
+      "pt": "existia também / vivia também",
+      "example": "In those days, there also lived an old soldier.",
+      "type": "expressão",
+      "ptbr": "dér ólsou livd"
+    },
+    {
+      "word": "old soldier",
+      "pt": "velho soldado",
+      "example": "...an old soldier called Jack Hannaford.",
+      "type": "substantivo",
+      "ptbr": "ôuld sôuldjer"
+    },
+    {
+      "word": "coat",
+      "pt": "casaco / sobretudo",
+      "example": "His coat was old and he was poor.",
+      "type": "substantivo",
+      "ptbr": "côut"
+    },
+    {
+      "word": "poor",
+      "pt": "pobre",
+      "example": "His coat was old and he was poor.",
+      "type": "adjetivo",
+      "ptbr": "púr"
+    },
+    {
+      "word": "nobody",
+      "pt": "ninguém",
+      "example": "but nobody thought that Jack Hannaford was stupid.",
+      "type": "pronome",
+      "ptbr": "nôubadi"
+    },
+    {
+      "word": "stupid",
+      "pt": "estúpido / burro / bobo",
+      "example": "nobody thought that Jack Hannaford was stupid.",
+      "type": "adjetivo",
+      "ptbr": "stiúpid"
+    },
+    {
+      "word": "sly",
+      "pt": "astuto / malicioso / esperto",
+      "example": "He was sly like a fox.",
+      "type": "adjetivo",
+      "ptbr": "slái"
+    },
+    {
+      "word": "like a fox",
+      "pt": "como uma raposa",
+      "example": "He was sly like a fox.",
+      "type": "expressão",
+      "ptbr": "láik a fáks"
+    },
+    {
+      "word": "left the army",
+      "pt": "deixou o exército",
+      "example": "When he left the army...",
+      "type": "expressão",
+      "ptbr": "left di ármi"
+    },
+    {
+      "word": "walked all around",
+      "pt": "caminhou por todo / percorreu",
+      "example": "he walked all around the country.",
+      "type": "expressão",
+      "ptbr": "uókt ól aráund"
+    },
+    {
+      "word": "looking for",
+      "pt": "procurando por / em busca de",
+      "example": "looking for ways to play his tricks.",
+      "type": "expressão",
+      "ptbr": "lúkin fór"
+    },
+    {
+      "word": "ways",
+      "pt": "maneiras / formas / jeitos",
+      "example": "looking for ways to play his tricks.",
+      "type": "substantivo",
+      "ptbr": "uêis"
+    },
+    {
+      "word": "to play his tricks",
+      "pt": "fazer suas artimanhas / pregar peças",
+      "example": "looking for ways to play his tricks.",
+      "type": "expressão",
+      "ptbr": "tu plêi riz triks"
+    },
+    {
+      "word": "for some time",
+      "pt": "por algum tempo",
+      "example": "After he had traveled for some time...",
+      "type": "expressão",
+      "ptbr": "fór sâm táim"
+    },
+    {
+      "word": "came across",
+      "pt": "deu de cara com / encontrou por acaso",
+      "example": "he came across the farm belonging to the pair.",
+      "type": "phrasal verb",
+      "ptbr": "kêim akrós"
+    },
+    {
+      "word": "farm",
+      "pt": "fazenda / sítio",
+      "example": "he came across the farm belonging to the pair.",
+      "type": "substantivo",
+      "ptbr": "fárm"
+    },
+    {
+      "word": "belonging to",
+      "pt": "que pertencia a / pertencente a",
+      "example": "the farm belonging to the pair.",
+      "type": "expressão",
+      "ptbr": "bilónguin tu"
+    },
+    {
+      "word": "the pair",
+      "pt": "o par / o casal",
+      "example": "the farm belonging to the pair.",
+      "type": "substantivo",
+      "ptbr": "de pér"
+    },
+    {
+      "word": "knocked on the door",
+      "pt": "bateu na porta",
+      "example": "He knocked on the door of the house.",
+      "type": "expressão",
+      "ptbr": "nókt ón de dór"
+    },
+    {
+      "word": "a moment later",
+      "pt": "um momento depois / pouco depois",
+      "example": "and a moment later, the wife answered.",
+      "type": "expressão",
+      "ptbr": "a môument lêiter"
+    },
+    {
+      "word": "the wife",
+      "pt": "a esposa / a mulher",
+      "example": "a moment later, the wife answered.",
+      "type": "substantivo",
+      "ptbr": "de uáif"
+    },
+    {
+      "word": "answered",
+      "pt": "respondeu / atendeu",
+      "example": "the wife answered.",
+      "type": "verbo",
+      "ptbr": "ánserd"
+    },
+    {
+      "word": "looked him up and down",
+      "pt": "olhou ele de cima a baixo",
+      "example": "She looked him up and down, quite astonished.",
+      "type": "expressão",
+      "ptbr": "lúkt rim âp end dáun"
+    },
+    {
+      "word": "quite",
+      "pt": "bastante / muito / completamente",
+      "example": "She looked him up and down, quite astonished.",
+      "type": "advérbio",
+      "ptbr": "kuáit"
+    },
+    {
+      "word": "astonished",
+      "pt": "surpreso / espantado / assombrado",
+      "example": "quite astonished.",
+      "type": "adjetivo",
+      "ptbr": "astónisht"
+    },
+    {
+      "word": "few strangers",
+      "pt": "poucos desconhecidos / poucos estranhos",
+      "example": "because few strangers were able to make the journey.",
+      "type": "expressão",
+      "ptbr": "fiú strêindjers"
+    },
+    {
+      "word": "were able to",
+      "pt": "eram capazes de / conseguiam",
+      "example": "few strangers were able to make the journey.",
+      "type": "expressão",
+      "ptbr": "uér êibol tu"
+    },
+    {
+      "word": "difficult journey",
+      "pt": "jornada difícil / viagem difícil",
+      "example": "the difficult journey to their home.",
+      "type": "expressão",
+      "ptbr": "dificolt djârni"
+    },
+    {
+      "word": "where did you come from",
+      "pt": "de onde você veio",
+      "example": "\"Where did you come from?\" she asked.",
+      "type": "expressão",
+      "ptbr": "uér did iú kâm frâm"
+    }
   ]
 }

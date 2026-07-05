@@ -3,41 +3,237 @@
   "label": "Part 04",
   "text": "\"He works hard sewing and mending clothes for the saints and angels, but even so, he sometimes doesn't have enough money to eat.\" \"And did he send me a message?\", she asked. \"Yes, he did! That is why I've come here. He asked me to bring back some money for him, so that he can spend his days in paradise more comfortably.\" On hearing this, the poor woman's heart almost broke with pity.",
   "sentences": [
-    { "id": "33", "en": "\"He works hard sewing and mending clothes for the saints and angels,", "pt": "\"Ele trabalha duro costurando e remendando roupas para as santidades e os anjos," },
-    { "id": "34", "en": "but even so, he sometimes doesn't have enough money to eat.\"", "pt": "mas mesmo assim, ele às vezes não tem dinheiro o suficiente para comer.\"" },
-    { "id": "35", "en": "\"And did he send me a message?\", she asked.", "pt": "\"E ele me mandou uma mensagem?\", ela perguntou." },
-    { "id": "36", "en": "\"Yes, he did!", "pt": "\"Sim, ele mandou!" },
-    { "id": "37", "en": "That is why I've come here.", "pt": "É por isso que eu vim aqui." },
-    { "id": "38", "en": "He asked me to bring back some money for him,", "pt": "Ele me pediu para trazer de volta um pouco de dinheiro para ele," },
-    { "id": "39", "en": "so that he can spend his days in paradise more comfortably.\"", "pt": "para que / de modo que ele possa passar seus dias no paraíso mais confortavelmente.\"" },
-    { "id": "40", "en": "On hearing this, the poor woman's heart almost broke with pity.", "pt": "Ao ouvir isso, o coração da pobre mulher quase quebrou com / de piedade." }
+    {
+      "id": "33",
+      "en": "\"He works hard sewing and mending clothes for the saints and angels,",
+      "pt": "\"Ele trabalha duro costurando e remendando roupas para as santidades e os anjos,",
+      "ptbr": "ri uârks rárd sôuin end méndin klôudz fór de sêints end êindjels"
+    },
+    {
+      "id": "34",
+      "en": "but even so, he sometimes doesn't have enough money to eat.\"",
+      "pt": "mas mesmo assim, ele às vezes não tem dinheiro o suficiente para comer.\"",
+      "ptbr": "bât íven sôu, ri sâmtáims dâzent rév ináf mâni tu ít"
+    },
+    {
+      "id": "35",
+      "en": "\"And did he send me a message?\", she asked.",
+      "pt": "\"E ele me mandou uma mensagem?\", ela perguntou.",
+      "ptbr": "end did ri sénd mi a méssidj? chi éskt"
+    },
+    {
+      "id": "36",
+      "en": "\"Yes, he did!",
+      "pt": "\"Sim, ele mandou!",
+      "ptbr": "iés, ri did"
+    },
+    {
+      "id": "37",
+      "en": "That is why I've come here.",
+      "pt": "É por isso que eu vim aqui.",
+      "ptbr": "dét iz uái áiv kâm rír"
+    },
+    {
+      "id": "38",
+      "en": "He asked me to bring back some money for him,",
+      "pt": "Ele me pediu para trazer de volta um pouco de dinheiro para ele,",
+      "ptbr": "ri éskt mi tu bring bék sâm mâni fór rim"
+    },
+    {
+      "id": "39",
+      "en": "so that he can spend his days in paradise more comfortably.\"",
+      "pt": "para que / de modo que ele possa passar seus dias no paraíso mais confortavelmente.\"",
+      "ptbr": "sôu dét ri kén spénd riz dêis in péradais mór kâmfterbli"
+    },
+    {
+      "id": "40",
+      "en": "On hearing this, the poor woman's heart almost broke with pity.",
+      "pt": "Ao ouvir isso, o coração da pobre mulher quase quebrou com / de piedade.",
+      "ptbr": "ón rírin dis, de púr uúmans rárt ólmoust brôuk uid píti"
+    }
   ],
   "vocab": [
-    { "word": "works hard", "pt": "trabalha duro / trabalha muito", "example": "He works hard sewing and mending clothes.", "type": "expressão" },
-    { "word": "sewing and mending clothes", "pt": "costurando e remendando roupas", "example": "He works hard sewing and mending clothes for the saints.", "type": "expressão" },
-    { "word": "sewing", "pt": "costurando / costurar", "example": "sewing and mending clothes.", "type": "verbo" },
-    { "word": "mending", "pt": "remendando / consertando", "example": "sewing and mending clothes.", "type": "verbo" },
-    { "word": "clothes", "pt": "roupas", "example": "sewing and mending clothes.", "type": "substantivo" },
-    { "word": "the saints and angels", "pt": "as santidades e os anjos / os santos e anjos", "example": "for the saints and angels.", "type": "expressão" },
-    { "word": "but even so", "pt": "mas mesmo assim", "example": "but even so, he sometimes doesn't have enough money.", "type": "expressão" },
-    { "word": "sometimes", "pt": "às vezes", "example": "he sometimes doesn't have enough money to eat.", "type": "advérbio" },
-    { "word": "enough money", "pt": "dinheiro suficiente / dinheiro o bastante", "example": "he doesn't have enough money to eat.", "type": "expressão" },
-    { "word": "to eat", "pt": "para comer", "example": "enough money to eat.", "type": "verbo" },
-    { "word": "send me a message", "pt": "me mandar uma mensagem", "example": "And did he send me a message?", "type": "expressão" },
-    { "word": "she asked", "pt": "ela perguntou", "example": "\"And did he send me a message?\", she asked.", "type": "expressão" },
-    { "word": "he did", "pt": "ele mandou / ele fez (resposta afirmativa)", "example": "Yes, he did!", "type": "expressão" },
-    { "word": "That is why", "pt": "É por isso que / Por essa razão", "example": "That is why I've come here.", "type": "expressão" },
-    { "word": "I've come here", "pt": "eu vim aqui / eu vim para cá", "example": "That is why I've come here.", "type": "expressão" },
-    { "word": "asked me to", "pt": "me pediu para", "example": "He asked me to bring back some money.", "type": "expressão" },
-    { "word": "bring back", "pt": "trazer de volta", "example": "He asked me to bring back some money for him.", "type": "phrasal verb" },
-    { "word": "some money", "pt": "um pouco de dinheiro / algum dinheiro", "example": "bring back some money for him.", "type": "expressão" },
-    { "word": "so that", "pt": "para que / de modo que", "example": "so that he can spend his days in paradise.", "type": "expressão" },
-    { "word": "spend his days", "pt": "passar seus dias", "example": "so that he can spend his days in paradise.", "type": "expressão" },
-    { "word": "paradise", "pt": "paraíso", "example": "he can spend his days in paradise.", "type": "substantivo" },
-    { "word": "more comfortably", "pt": "mais confortavelmente", "example": "spend his days in paradise more comfortably.", "type": "advérbio" },
-    { "word": "on hearing this", "pt": "ao ouvir isso", "example": "On hearing this, the poor woman's heart almost broke.", "type": "expressão" },
-    { "word": "the poor woman's heart", "pt": "o coração da pobre mulher", "example": "the poor woman's heart almost broke with pity.", "type": "expressão" },
-    { "word": "almost broke", "pt": "quase quebrou / quase se partiu", "example": "her heart almost broke with pity.", "type": "expressão" },
-    { "word": "with pity", "pt": "com / de piedade / de compaixão", "example": "her heart almost broke with pity.", "type": "expressão" }
+    {
+      "word": "works hard",
+      "pt": "trabalha duro / trabalha muito",
+      "example": "He works hard sewing and mending clothes.",
+      "type": "expressão",
+      "ptbr": "uârks rárd"
+    },
+    {
+      "word": "sewing and mending clothes",
+      "pt": "costurando e remendando roupas",
+      "example": "He works hard sewing and mending clothes for the saints.",
+      "type": "expressão",
+      "ptbr": "sôuin end méndin klôudz"
+    },
+    {
+      "word": "sewing",
+      "pt": "costurando / costurar",
+      "example": "sewing and mending clothes.",
+      "type": "verbo",
+      "ptbr": "sôuin"
+    },
+    {
+      "word": "mending",
+      "pt": "remendando / consertando",
+      "example": "sewing and mending clothes.",
+      "type": "verbo",
+      "ptbr": "méndin"
+    },
+    {
+      "word": "clothes",
+      "pt": "roupas",
+      "example": "sewing and mending clothes.",
+      "type": "substantivo",
+      "ptbr": "klôudz"
+    },
+    {
+      "word": "the saints and angels",
+      "pt": "as santidades e os anjos / os santos e anjos",
+      "example": "for the saints and angels.",
+      "type": "expressão",
+      "ptbr": "de sêints end êindjels"
+    },
+    {
+      "word": "but even so",
+      "pt": "mas mesmo assim",
+      "example": "but even so, he sometimes doesn't have enough money.",
+      "type": "expressão",
+      "ptbr": "bât íven sôu"
+    },
+    {
+      "word": "sometimes",
+      "pt": "às vezes",
+      "example": "he sometimes doesn't have enough money to eat.",
+      "type": "advérbio",
+      "ptbr": "sâmtáims"
+    },
+    {
+      "word": "enough money",
+      "pt": "dinheiro suficiente / dinheiro o bastante",
+      "example": "he doesn't have enough money to eat.",
+      "type": "expressão",
+      "ptbr": "ináf mâni"
+    },
+    {
+      "word": "to eat",
+      "pt": "para comer",
+      "example": "enough money to eat.",
+      "type": "verbo",
+      "ptbr": "tu ít"
+    },
+    {
+      "word": "send me a message",
+      "pt": "me mandar uma mensagem",
+      "example": "And did he send me a message?",
+      "type": "expressão",
+      "ptbr": "sénd mi a méssidj"
+    },
+    {
+      "word": "she asked",
+      "pt": "ela perguntou",
+      "example": "\"And did he send me a message?\", she asked.",
+      "type": "expressão",
+      "ptbr": "chi éskt"
+    },
+    {
+      "word": "he did",
+      "pt": "ele mandou / ele fez (resposta afirmativa)",
+      "example": "Yes, he did!",
+      "type": "expressão",
+      "ptbr": "ri did"
+    },
+    {
+      "word": "That is why",
+      "pt": "É por isso que / Por essa razão",
+      "example": "That is why I've come here.",
+      "type": "expressão",
+      "ptbr": "dét iz uái"
+    },
+    {
+      "word": "I've come here",
+      "pt": "eu vim aqui / eu vim para cá",
+      "example": "That is why I've come here.",
+      "type": "expressão",
+      "ptbr": "áiv kâm rír"
+    },
+    {
+      "word": "asked me to",
+      "pt": "me pediu para",
+      "example": "He asked me to bring back some money.",
+      "type": "expressão",
+      "ptbr": "éskt mi tu"
+    },
+    {
+      "word": "bring back",
+      "pt": "trazer de volta",
+      "example": "He asked me to bring back some money for him.",
+      "type": "phrasal verb",
+      "ptbr": "bring bék"
+    },
+    {
+      "word": "some money",
+      "pt": "um pouco de dinheiro / algum dinheiro",
+      "example": "bring back some money for him.",
+      "type": "expressão",
+      "ptbr": "sâm mâni"
+    },
+    {
+      "word": "so that",
+      "pt": "para que / de modo que",
+      "example": "so that he can spend his days in paradise.",
+      "type": "expressão",
+      "ptbr": "sôu dét"
+    },
+    {
+      "word": "spend his days",
+      "pt": "passar seus dias",
+      "example": "so that he can spend his days in paradise.",
+      "type": "expressão",
+      "ptbr": "spénd riz dêis"
+    },
+    {
+      "word": "paradise",
+      "pt": "paraíso",
+      "example": "he can spend his days in paradise.",
+      "type": "substantivo",
+      "ptbr": "péradais"
+    },
+    {
+      "word": "more comfortably",
+      "pt": "mais confortavelmente",
+      "example": "spend his days in paradise more comfortably.",
+      "type": "advérbio",
+      "ptbr": "mór kâmfterbli"
+    },
+    {
+      "word": "on hearing this",
+      "pt": "ao ouvir isso",
+      "example": "On hearing this, the poor woman's heart almost broke.",
+      "type": "expressão",
+      "ptbr": "ón rírin dis"
+    },
+    {
+      "word": "the poor woman's heart",
+      "pt": "o coração da pobre mulher",
+      "example": "the poor woman's heart almost broke with pity.",
+      "type": "expressão",
+      "ptbr": "de púr uúmans rárt"
+    },
+    {
+      "word": "almost broke",
+      "pt": "quase quebrou / quase se partiu",
+      "example": "her heart almost broke with pity.",
+      "type": "expressão",
+      "ptbr": "ólmoust brôuk"
+    },
+    {
+      "word": "with pity",
+      "pt": "com / de piedade / de compaixão",
+      "example": "her heart almost broke with pity.",
+      "type": "expressão",
+      "ptbr": "uid píti"
+    }
   ]
 }

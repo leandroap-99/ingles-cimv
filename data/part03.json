@@ -3,37 +3,207 @@
   "label": "Part 03",
   "text": "Jack looked up at the pale blue sky, and he said, \"I came from Heaven.\" \"My goodness!\", she said. \"Did you see my husband there?\" (The farmer's wife was talking about her first husband, the man who had died). \"Oh yes, I got to know him well when I was staying in Heaven,\" said Jack. \"And how is he doing?\", asked the woman. \"He is fine,\" replied the old soldier.",
   "sentences": [
-    { "id": "23", "en": "Jack looked up at the pale blue sky,", "pt": "Jack olhou para o céu azul claro," },
-    { "id": "24", "en": "and he said, \"I came from Heaven.\"", "pt": "e ele disse, \"eu vim do céu\"." },
-    { "id": "25", "en": "\"My goodness!\", she said.", "pt": "\"Meu Deus!\", ela disse." },
-    { "id": "26", "en": "\"Did you see my husband there?\"", "pt": "\"Você viu meu marido lá?\"" },
-    { "id": "27", "en": "The farmer's wife was talking about her first husband,", "pt": "A esposa do fazendeiro estava falando sobre o primeiro marido dela," },
-    { "id": "28", "en": "the man who had died.", "pt": "o homem que tinha morrido." },
-    { "id": "29", "en": "\"Oh yes, I got to know him well", "pt": "\"Ah sim, eu conheci ele bem" },
-    { "id": "30", "en": "when I was staying in Heaven,\" said Jack.", "pt": "quando eu estava passando um tempo no céu\", disse Jack." },
-    { "id": "31", "en": "\"And how is he doing?\", asked the woman.", "pt": "\"E como ele está?\", perguntou a mulher." },
-    { "id": "32", "en": "\"He is fine,\" replied the old soldier.", "pt": "\"Ele está bem\", respondeu o velho soldado." }
+    {
+      "id": "23",
+      "en": "Jack looked up at the pale blue sky,",
+      "pt": "Jack olhou para o céu azul claro,",
+      "ptbr": "djék lúkt âp et de pêil blú skái"
+    },
+    {
+      "id": "24",
+      "en": "and he said, \"I came from Heaven.\"",
+      "pt": "e ele disse, \"eu vim do céu\".",
+      "ptbr": "end ri séd, ái kêim frâm réven"
+    },
+    {
+      "id": "25",
+      "en": "\"My goodness!\", she said.",
+      "pt": "\"Meu Deus!\", ela disse.",
+      "ptbr": "mái gúdnes, chi séd"
+    },
+    {
+      "id": "26",
+      "en": "\"Did you see my husband there?\"",
+      "pt": "\"Você viu meu marido lá?\"",
+      "ptbr": "did iú sí mái râzband dér?"
+    },
+    {
+      "id": "27",
+      "en": "The farmer's wife was talking about her first husband,",
+      "pt": "A esposa do fazendeiro estava falando sobre o primeiro marido dela,",
+      "ptbr": "de fármers uáif uóz tókin abáut rer fârst râzband"
+    },
+    {
+      "id": "28",
+      "en": "the man who had died.",
+      "pt": "o homem que tinha morrido.",
+      "ptbr": "de mén rú réd dáid"
+    },
+    {
+      "id": "29",
+      "en": "\"Oh yes, I got to know him well",
+      "pt": "\"Ah sim, eu conheci ele bem",
+      "ptbr": "ôu iés, ái gót tu nôu rim uél"
+    },
+    {
+      "id": "30",
+      "en": "when I was staying in Heaven,\" said Jack.",
+      "pt": "quando eu estava passando um tempo no céu\", disse Jack.",
+      "ptbr": "uén ái uóz stêiin in réven, séd djék"
+    },
+    {
+      "id": "31",
+      "en": "\"And how is he doing?\", asked the woman.",
+      "pt": "\"E como ele está?\", perguntou a mulher.",
+      "ptbr": "end ráu iz ri dúin? éskt de uúman"
+    },
+    {
+      "id": "32",
+      "en": "\"He is fine,\" replied the old soldier.",
+      "pt": "\"Ele está bem\", respondeu o velho soldado.",
+      "ptbr": "ri iz fáin, ripláid di ôuld sôuldjer"
+    }
   ],
   "vocab": [
-    { "word": "looked up at", "pt": "olhou para cima / olhou em direção a", "example": "Jack looked up at the pale blue sky.", "type": "phrasal verb" },
-    { "word": "pale blue sky", "pt": "céu azul claro / céu azul pálido", "example": "Jack looked up at the pale blue sky.", "type": "expressão" },
-    { "word": "pale", "pt": "pálido / claro / desbotado", "example": "the pale blue sky.", "type": "adjetivo" },
-    { "word": "Heaven", "pt": "céu / paraíso", "example": "I came from Heaven.", "type": "substantivo" },
-    { "word": "My goodness", "pt": "Meu Deus! / Nossa! / Que surpresa!", "example": "\"My goodness!\", she said.", "type": "expressão" },
-    { "word": "Did you see", "pt": "Você viu / Você enxergou", "example": "\"Did you see my husband there?\"", "type": "expressão" },
-    { "word": "husband", "pt": "marido / esposo", "example": "\"Did you see my husband there?\"", "type": "substantivo" },
-    { "word": "farmer's wife", "pt": "esposa do fazendeiro / mulher do fazendeiro", "example": "The farmer's wife was talking about her first husband.", "type": "expressão" },
-    { "word": "was talking about", "pt": "estava falando sobre", "example": "The farmer's wife was talking about her first husband.", "type": "expressão" },
-    { "word": "first husband", "pt": "primeiro marido", "example": "talking about her first husband.", "type": "expressão" },
-    { "word": "who had died", "pt": "que tinha morrido / que havia falecido", "example": "the man who had died.", "type": "expressão" },
-    { "word": "died", "pt": "morreu / faleceu", "example": "the man who had died.", "type": "verbo" },
-    { "word": "got to know", "pt": "conheceu / chegou a conhecer", "example": "I got to know him well.", "type": "expressão" },
-    { "word": "well", "pt": "bem", "example": "I got to know him well.", "type": "advérbio" },
-    { "word": "was staying in", "pt": "estava ficando em / estava hospedado em", "example": "when I was staying in Heaven.", "type": "expressão" },
-    { "word": "And how is he doing", "pt": "E como ele está / E como ele vai", "example": "\"And how is he doing?\", asked the woman.", "type": "expressão" },
-    { "word": "asked the woman", "pt": "perguntou a mulher", "example": "\"And how is he doing?\", asked the woman.", "type": "expressão" },
-    { "word": "He is fine", "pt": "Ele está bem", "example": "\"He is fine,\" replied the old soldier.", "type": "expressão" },
-    { "word": "replied", "pt": "respondeu / replicou", "example": "\"He is fine,\" replied the old soldier.", "type": "verbo" },
-    { "word": "old soldier", "pt": "velho soldado", "example": "replied the old soldier.", "type": "substantivo" }
+    {
+      "word": "looked up at",
+      "pt": "olhou para cima / olhou em direção a",
+      "example": "Jack looked up at the pale blue sky.",
+      "type": "phrasal verb",
+      "ptbr": "lúkt âp et"
+    },
+    {
+      "word": "pale blue sky",
+      "pt": "céu azul claro / céu azul pálido",
+      "example": "Jack looked up at the pale blue sky.",
+      "type": "expressão",
+      "ptbr": "pêil blú skái"
+    },
+    {
+      "word": "pale",
+      "pt": "pálido / claro / desbotado",
+      "example": "the pale blue sky.",
+      "type": "adjetivo",
+      "ptbr": "pêil"
+    },
+    {
+      "word": "Heaven",
+      "pt": "céu / paraíso",
+      "example": "I came from Heaven.",
+      "type": "substantivo",
+      "ptbr": "réven"
+    },
+    {
+      "word": "My goodness",
+      "pt": "Meu Deus! / Nossa! / Que surpresa!",
+      "example": "\"My goodness!\", she said.",
+      "type": "expressão",
+      "ptbr": "mái gúdnes"
+    },
+    {
+      "word": "Did you see",
+      "pt": "Você viu / Você enxergou",
+      "example": "\"Did you see my husband there?\"",
+      "type": "expressão",
+      "ptbr": "did iú sí"
+    },
+    {
+      "word": "husband",
+      "pt": "marido / esposo",
+      "example": "\"Did you see my husband there?\"",
+      "type": "substantivo",
+      "ptbr": "râzband"
+    },
+    {
+      "word": "farmer's wife",
+      "pt": "esposa do fazendeiro / mulher do fazendeiro",
+      "example": "The farmer's wife was talking about her first husband.",
+      "type": "expressão",
+      "ptbr": "fármers uáif"
+    },
+    {
+      "word": "was talking about",
+      "pt": "estava falando sobre",
+      "example": "The farmer's wife was talking about her first husband.",
+      "type": "expressão",
+      "ptbr": "uóz tókin abáut"
+    },
+    {
+      "word": "first husband",
+      "pt": "primeiro marido",
+      "example": "talking about her first husband.",
+      "type": "expressão",
+      "ptbr": "fârst râzband"
+    },
+    {
+      "word": "who had died",
+      "pt": "que tinha morrido / que havia falecido",
+      "example": "the man who had died.",
+      "type": "expressão",
+      "ptbr": "rú réd dáid"
+    },
+    {
+      "word": "died",
+      "pt": "morreu / faleceu",
+      "example": "the man who had died.",
+      "type": "verbo",
+      "ptbr": "dáid"
+    },
+    {
+      "word": "got to know",
+      "pt": "conheceu / chegou a conhecer",
+      "example": "I got to know him well.",
+      "type": "expressão",
+      "ptbr": "gót tu nôu"
+    },
+    {
+      "word": "well",
+      "pt": "bem",
+      "example": "I got to know him well.",
+      "type": "advérbio",
+      "ptbr": "uél"
+    },
+    {
+      "word": "was staying in",
+      "pt": "estava ficando em / estava hospedado em",
+      "example": "when I was staying in Heaven.",
+      "type": "expressão",
+      "ptbr": "uóz stêiin in"
+    },
+    {
+      "word": "And how is he doing",
+      "pt": "E como ele está / E como ele vai",
+      "example": "\"And how is he doing?\", asked the woman.",
+      "type": "expressão",
+      "ptbr": "end ráu iz ri dúin"
+    },
+    {
+      "word": "asked the woman",
+      "pt": "perguntou a mulher",
+      "example": "\"And how is he doing?\", asked the woman.",
+      "type": "expressão",
+      "ptbr": "éskt de uúman"
+    },
+    {
+      "word": "He is fine",
+      "pt": "Ele está bem",
+      "example": "\"He is fine,\" replied the old soldier.",
+      "type": "expressão",
+      "ptbr": "ri iz fáin"
+    },
+    {
+      "word": "replied",
+      "pt": "respondeu / replicou",
+      "example": "\"He is fine,\" replied the old soldier.",
+      "type": "verbo",
+      "ptbr": "ripláid"
+    },
+    {
+      "word": "old soldier",
+      "pt": "velho soldado",
+      "example": "replied the old soldier.",
+      "type": "substantivo",
+      "ptbr": "ôuld sôuldjer"
+    }
   ]
 }
