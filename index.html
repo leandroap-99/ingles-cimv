@@ -30,6 +30,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .card-label{font-size:10px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.1em}
 .card-word{font-size:20px;font-weight:700;text-align:center;line-height:1.4}
 .card-example{font-size:13px;color:#999;text-align:center;line-height:1.5;font-style:italic;padding:0 .5rem}
+.card-ptbr{font-size:13px;color:#c2691a;text-align:center;font-style:italic}
 .card-translation{font-size:17px;font-weight:600;color:#1a4fa0;text-align:center;line-height:1.5}
 .card-hint{font-size:12px;color:#ccc}
 .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
@@ -109,6 +110,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
             <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           </button>
           <p class="card-word" id="front-word"></p>
+          <p class="card-ptbr" id="front-ptbr"></p>
           <p class="card-example" id="front-example"></p>
           <span class="card-hint">Toque para ver a tradução</span>
         </div>
@@ -402,6 +404,9 @@ function render() {
   var isSen = section === "sentences";
   document.getElementById("front-badge").innerHTML = badgeHTML(isSen ? "frase" : it.type);
   document.getElementById("front-word").textContent = isSen ? it.en : it.word;
+  var ptbrEl = document.getElementById("front-ptbr");
+  ptbrEl.textContent = it.ptbr ? ("\u{1F5E3} " + it.ptbr) : "";
+  ptbrEl.style.display = it.ptbr ? "" : "none";
   var ex = document.getElementById("front-example");
   ex.textContent = isSen ? "" : it.example;
   ex.style.display = isSen ? "none" : "";
