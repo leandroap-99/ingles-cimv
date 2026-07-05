@@ -76,6 +76,27 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .text-box h3{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem}
 .full-audio-btn{width:100%;padding:12px;border:1px solid #c8d8ff;border-radius:10px;background:#f0f5ff;font-size:14px;font-family:inherit;color:#1a4fa0;font-weight:600;cursor:pointer;margin-bottom:1.25rem;-webkit-tap-highlight-color:transparent}
 .full-audio-btn.playing{background:#4a7cf0;color:#fff;border-color:#4a7cf0}
+
+.practice-box{background:#fff;border:1px solid #e5e5e0;border-radius:14px;padding:1rem 1.25rem;margin-bottom:1.25rem}
+.practice-title{font-size:11px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.75rem;display:flex;align-items:center;gap:6px}
+.practice-controls{display:flex;gap:8px;margin-bottom:.5rem}
+.prac-btn{flex:1;padding:11px;border-radius:10px;border:1px solid #ddd;background:#fff;font-size:14px;font-family:inherit;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;-webkit-tap-highlight-color:transparent;transition:all .15s}
+.prac-btn:disabled{opacity:.35;cursor:default}
+.prac-rec{color:#c0392b;border-color:#f0c0bc}
+.prac-rec.recording{background:#c0392b;color:#fff;border-color:#c0392b;animation:recpulse 1s ease-in-out infinite}
+@keyframes recpulse{0%,100%{opacity:1}50%{opacity:.6}}
+.prac-listen{color:#1e8449;border-color:#bce8cf}
+.prac-listen:disabled{color:#aaa;border-color:#ddd}
+.prac-compare{display:flex;gap:8px;margin-top:.25rem}
+.prac-compare .prac-btn{font-size:13px;padding:9px}
+.prac-orig{color:#1a4fa0;border-color:#c8d8ff}
+.recog-result{margin-top:.75rem;padding:10px 12px;border-radius:8px;font-size:13px;line-height:1.5;display:none}
+.recog-result.show{display:block}
+.recog-ok{background:#e6f9f0;color:#1e8449}
+.recog-partial{background:#fef7e0;color:#a16207}
+.recog-fail{background:#fde8e8;color:#c0392b}
+.recog-heard{font-style:italic}
+.recog-note{font-size:11px;color:#bbb;margin-top:.5rem;text-align:center}
 .hl{background:#fff3cd;border-radius:3px;padding:1px 3px;cursor:pointer;font-weight:600;color:#92400e}
 .loading{text-align:center;padding:3rem 1rem;color:#aaa;font-size:14px}
 </style>
@@ -139,6 +160,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <span class="order-info" id="order-info"></span>
     </div>
     <p class="card-counter" id="counter"></p>
+    <div class="practice-box" id="practice-box">
+      <p class="practice-title">🎤 Treine sua pronúncia</p>
+      <div class="practice-controls">
+        <button class="prac-btn prac-rec" id="rec-btn" onclick="toggleRecord()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>
+          <span id="rec-label">Gravar</span>
+        </button>
+        <button class="prac-btn prac-listen" id="listen-btn" onclick="playMyRecording()" disabled>
+          ▶ Minha voz
+        </button>
+      </div>
+      <div class="prac-compare">
+        <button class="prac-btn prac-orig" onclick="playCurrent()">🔊 Original</button>
+      </div>
+      <div class="recog-result" id="recog-result"></div>
+      <p class="recog-note">O reconhecimento é uma referência aproximada, não um veredito. Compare sua voz com o original.</p>
+    </div>
+
   </div>
 
   <div id="list-view" style="display:none" class="list-view"></div>
@@ -328,6 +367,7 @@ function playCurrent() {
 
 function goTo(idx) {
   stopAll(null);
+  resetPractice();
   if (idx < 0 || idx >= items().length) return;
   cur = idx; flipped = false;
   document.getElementById("card").classList.remove("flipped");
@@ -349,6 +389,7 @@ function markResult(c) {
 function setSection(s) {
   section = s; cur = 0; results = {}; flipped = false; shuffleOrder = [];
   stopAll(null);
+  resetPractice();
   document.getElementById("card").classList.remove("flipped");
   document.getElementById("sec-sentences").classList.toggle("active", s === "sentences");
   document.getElementById("sec-vocab").classList.toggle("active", s === "vocab");
@@ -365,6 +406,7 @@ function setMode(m) {
     document.getElementById("tab-" + id).classList.toggle("active", id === m);
   });
   document.getElementById("cards-view").style.display = (m === "cards" || m === "quiz") ? "" : "none";
+  document.getElementById("practice-box").style.display = (m === "cards") ? "" : "none";
   document.getElementById("list-view").style.display = m === "list" ? "" : "none";
   document.getElementById("text-view").style.display = m === "text" ? "" : "none";
   document.getElementById("quiz-btns").style.display = m === "quiz" ? "flex" : "none";
@@ -475,6 +517,195 @@ function renderText() {
 // ══════════════════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════
+//  TREINO DE PRONÚNCIA — gravar, ouvir e reconhecer
+// ══════════════════════════════════════════════════════════
+var mediaRecorder = null;
+var recordedChunks = [];
+var myRecordingUrl = null;
+var myRecordingAudio = null;
+var isRecording = false;
+var recognition = null;
+
+// Texto esperado do cartão atual (frase ou palavra)
+function expectedText() {
+  var it = currentItem();
+  return section === "sentences" ? it.en : it.word;
+}
+
+// Normaliza texto para comparação (minúsculas, sem pontuação)
+function normalize(s) {
+  return s.toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, " ").trim();
+}
+
+function toggleRecord() {
+  if (isRecording) { stopRecording(); return; }
+  startRecording();
+}
+
+function startRecording() {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    showRecog("fail", "Seu navegador não permite gravação de áudio.");
+    return;
+  }
+  navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
+    recordedChunks = [];
+    var mime = "";
+    if (MediaRecorder.isTypeSupported("audio/webm")) mime = "audio/webm";
+    else if (MediaRecorder.isTypeSupported("audio/mp4")) mime = "audio/mp4";
+    mediaRecorder = mime ? new MediaRecorder(stream, { mimeType: mime }) : new MediaRecorder(stream);
+
+    mediaRecorder.ondataavailable = function(e) {
+      if (e.data.size > 0) recordedChunks.push(e.data);
+    };
+    mediaRecorder.onstop = function() {
+      if (myRecordingUrl) URL.revokeObjectURL(myRecordingUrl);
+      var blob = new Blob(recordedChunks, { type: mediaRecorder.mimeType });
+      myRecordingUrl = URL.createObjectURL(blob);
+      document.getElementById("listen-btn").disabled = false;
+      // Encerra o microfone
+      stream.getTracks().forEach(function(t){ t.stop(); });
+    };
+    mediaRecorder.start();
+    isRecording = true;
+    var btn = document.getElementById("rec-btn");
+    btn.classList.add("recording");
+    document.getElementById("rec-label").textContent = "Parar";
+    hideRecog();
+    // Inicia reconhecimento em paralelo (se disponível)
+    startRecognition();
+  }).catch(function() {
+    showRecog("fail", "Não foi possível acessar o microfone. Verifique a permissão.");
+  });
+}
+
+function stopRecording() {
+  if (mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+  isRecording = false;
+  var btn = document.getElementById("rec-btn");
+  btn.classList.remove("recording");
+  document.getElementById("rec-label").textContent = "Gravar";
+  stopRecognition();
+}
+
+function playMyRecording() {
+  if (!myRecordingUrl) return;
+  stopAll(null);
+  if (myRecordingAudio) { myRecordingAudio.pause(); }
+  myRecordingAudio = new Audio(myRecordingUrl);
+  myRecordingAudio.play().catch(function(){});
+}
+
+// ── Reconhecimento de fala (referência aproximada) ──
+var recogGotResult = false;
+function startRecognition() {
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return; // silencioso: iOS/Safari geralmente não tem
+  try {
+    recogGotResult = false;
+    recognition = new SR();
+    recognition.lang = "en-US";
+    recognition.interimResults = true;   // captura melhor palavras curtas
+    recognition.maxAlternatives = 3;     // mais chances de acertar palavra isolada
+    recognition.continuous = false;
+    recognition.onresult = function(ev) {
+      // Junta todas as alternativas de todos os resultados
+      var best = "";
+      for (var i = 0; i < ev.results.length; i++) {
+        if (ev.results[i][0] && ev.results[i][0].transcript) {
+          best = ev.results[i][0].transcript;
+        }
+      }
+      if (best) { recogGotResult = true; evaluateRecognition(best, ev.results); }
+    };
+    recognition.onerror = function(){};
+    recognition.onend = function() {
+      // Se terminou sem reconhecer nada, avisa (comum em palavras muito curtas)
+      if (!recogGotResult) {
+        showRecog("partial", "Não consegui captar bem. Fale um pouco mais alto e devagar, ou ouça sua gravação para comparar.");
+      }
+    };
+    recognition.start();
+  } catch(e) {}
+}
+
+function stopRecognition() {
+  if (recognition) { try { recognition.stop(); } catch(e){} }
+}
+
+function evaluateRecognition(heard, allResults) {
+  var expected = normalize(expectedText());
+  var expWords = expected.split(" ");
+  var isSingleWord = expWords.length <= 2; // palavra/expressão curta
+
+  // Reúne todas as alternativas reconhecidas para dar mais chance de match
+  var candidates = [normalize(heard)];
+  if (allResults) {
+    for (var i = 0; i < allResults.length; i++) {
+      for (var j = 0; j < allResults[i].length; j++) {
+        if (allResults[i][j] && allResults[i][j].transcript) {
+          candidates.push(normalize(allResults[i][j].transcript));
+        }
+      }
+    }
+  }
+
+  // Calcula o melhor ratio entre todas as alternativas
+  var bestRatio = 0;
+  candidates.forEach(function(got) {
+    var gotWords = got.split(" ");
+    var matched = 0;
+    expWords.forEach(function(w) {
+      if (gotWords.indexOf(w) !== -1) matched++;
+      else {
+        // match aproximado: a palavra esperada aparece dentro de alguma reconhecida
+        for (var k = 0; k < gotWords.length; k++) {
+          if (gotWords[k].length >= 3 && (gotWords[k].indexOf(w) !== -1 || w.indexOf(gotWords[k]) !== -1)) {
+            matched += 0.5; break;
+          }
+        }
+      }
+    });
+    var r = expWords.length ? matched / expWords.length : 0;
+    if (r > bestRatio) bestRatio = r;
+  });
+
+  var msg = "Entendi: \u201C<span class=\"recog-heard\">" + heard + "</span>\u201D";
+
+  // Palavras isoladas são mais difíceis de reconhecer — critério mais tolerante
+  var okThreshold = isSingleWord ? 0.5 : 0.8;
+  var partialThreshold = isSingleWord ? 0.25 : 0.4;
+
+  if (bestRatio >= okThreshold) {
+    showRecog("ok", "✓ Muito bom! " + msg);
+  } else if (bestRatio >= partialThreshold) {
+    showRecog("partial", "Quase lá. " + msg);
+  } else {
+    showRecog("fail", "Tente de novo. " + msg);
+  }
+}
+
+function showRecog(kind, htmlMsg) {
+  var el = document.getElementById("recog-result");
+  el.className = "recog-result show recog-" + kind;
+  el.innerHTML = htmlMsg;
+}
+function hideRecog() {
+  var el = document.getElementById("recog-result");
+  el.className = "recog-result";
+  el.innerHTML = "";
+}
+
+// Reseta o painel ao trocar de cartão
+function resetPractice() {
+  if (isRecording) stopRecording();
+  if (myRecordingUrl) { URL.revokeObjectURL(myRecordingUrl); myRecordingUrl = null; }
+  document.getElementById("listen-btn").disabled = true;
+  hideRecog();
+}
+
+
 function init() {
   loadManifest().then(function() {
     var sel = document.getElementById("part-selector");
