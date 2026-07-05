@@ -1,0 +1,40 @@
+{
+  "id": "part01",
+  "label": "Part 01",
+  "text": "There was once a farmer and his wife. She had been married before, her first husband had died, and now she was married again. They lived on a remote farm in the west of England, and what a pair of fools they were! Which of them was the most foolish? Listen to the story and decide for yourself.",
+  "sentences": [
+    { "id": "001", "en": "There was once a farmer and his wife.", "pt": "Era uma vez um fazendeiro e sua esposa.", "ptbr": "dér uóz uâns a fármer end riz uáif" },
+    { "id": "002", "en": "She had been married before,", "pt": "Ela tinha sido casada antes,", "ptbr": "chi réd bin mérrid bifór" },
+    { "id": "003", "en": "her first husband had died,", "pt": "o primeiro marido dela tinha morrido,", "ptbr": "rer fârst râzband réd dáid" },
+    { "id": "004", "en": "and now she was married again.", "pt": "e agora ela era casada novamente.", "ptbr": "end náu chi uóz mérrid aguén" },
+    { "id": "005", "en": "They lived on a remote farm in the west of England,", "pt": "Eles moravam em uma remota fazenda no oeste da Inglaterra,", "ptbr": "dêi livd ón a rimôut fárm in de uést ov ínglend" },
+    { "id": "006", "en": "and what a pair of fools they were!", "pt": "e que par de tolos eles eram!", "ptbr": "end uót a pér ov fúls dêi uér" },
+    { "id": "007", "en": "Which of them was the most foolish?", "pt": "Qual deles era o mais tolo?", "ptbr": "uîtch ov dem uóz de môust fúlish" },
+    { "id": "008", "en": "Listen to the story and decide for yourself.", "pt": "Escute a história e decida você mesmo.", "ptbr": "líssen tu de stóri end dissáid fór iursélf" }
+  ],
+  "vocab": [
+    { "word": "there was once", "pt": "era uma vez / existia uma vez", "example": "There was once a farmer and his wife.", "type": "expressão", "ptbr": "dér uóz uâns" },
+    { "word": "farmer", "pt": "fazendeiro / agricultor", "example": "There was once a farmer and his wife.", "type": "substantivo", "ptbr": "fármer" },
+    { "word": "his wife", "pt": "sua esposa / a esposa dele", "example": "a farmer and his wife.", "type": "expressão", "ptbr": "riz uáif" },
+    { "word": "she had been married", "pt": "ela tinha sido casada", "example": "She had been married before.", "type": "expressão", "ptbr": "chi réd bin mérrid" },
+    { "word": "before", "pt": "antes", "example": "She had been married before.", "type": "advérbio", "ptbr": "bifór" },
+    { "word": "first husband", "pt": "primeiro marido", "example": "her first husband had died.", "type": "expressão", "ptbr": "fârst râzband" },
+    { "word": "had died", "pt": "tinha morrido / havia falecido", "example": "her first husband had died.", "type": "expressão", "ptbr": "réd dáid" },
+    { "word": "and now", "pt": "e agora", "example": "and now she was married again.", "type": "expressão", "ptbr": "end náu" },
+    { "word": "she was married again", "pt": "ela era casada novamente", "example": "and now she was married again.", "type": "expressão", "ptbr": "chi uóz mérrid aguén" },
+    { "word": "again", "pt": "novamente / de novo", "example": "she was married again.", "type": "advérbio", "ptbr": "aguén" },
+    { "word": "they lived on", "pt": "eles moravam em", "example": "They lived on a remote farm.", "type": "expressão", "ptbr": "dêi livd ón" },
+    { "word": "remote farm", "pt": "fazenda remota / fazenda isolada", "example": "They lived on a remote farm in the west of England.", "type": "expressão", "ptbr": "rimôut fárm" },
+    { "word": "remote", "pt": "remoto / distante / isolado", "example": "a remote farm.", "type": "adjetivo", "ptbr": "rimôut" },
+    { "word": "the west of England", "pt": "o oeste da Inglaterra", "example": "a remote farm in the west of England.", "type": "expressão", "ptbr": "de uést ov ínglend" },
+    { "word": "what a pair of fools", "pt": "que par de tolos", "example": "and what a pair of fools they were!", "type": "expressão", "ptbr": "uót a pér ov fúls" },
+    { "word": "pair", "pt": "par / dupla", "example": "what a pair of fools.", "type": "substantivo", "ptbr": "pér" },
+    { "word": "fools", "pt": "tolos / bobos / idiotas", "example": "what a pair of fools they were!", "type": "substantivo", "ptbr": "fúls" },
+    { "word": "which of them", "pt": "qual deles", "example": "Which of them was the most foolish?", "type": "expressão", "ptbr": "uîtch ov dem" },
+    { "word": "the most foolish", "pt": "o mais tolo / o mais bobo", "example": "Which of them was the most foolish?", "type": "expressão", "ptbr": "de môust fúlish" },
+    { "word": "foolish", "pt": "tolo / bobo / insensato", "example": "the most foolish.", "type": "adjetivo", "ptbr": "fúlish" },
+    { "word": "listen to the story", "pt": "escute a história", "example": "Listen to the story and decide for yourself.", "type": "expressão", "ptbr": "líssen tu de stóri" },
+    { "word": "story", "pt": "história / conto", "example": "Listen to the story.", "type": "substantivo", "ptbr": "stóri" },
+    { "word": "decide for yourself", "pt": "decida você mesmo", "example": "decide for yourself.", "type": "expressão", "ptbr": "dissáid fór iursélf" }
+  ]
+}
