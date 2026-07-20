@@ -1,4 +1,4 @@
-# Jack Hannaford — App de Inglês (GitHub Pages) ..
+# Jack Hannaford — App de Inglês (GitHub Pages) 
 
 App de flashcards com frases, vocabulário, áudio e texto do curso CIMV,
 pronto para publicar **grátis** no GitHub Pages, com HTTPS automático
