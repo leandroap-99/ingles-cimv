@@ -102,6 +102,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .rep-btn{min-width:40px;padding:6px 10px;border:1px solid #ddd;border-radius:8px;background:#fff;font-size:13px;font-family:inherit;color:#555;cursor:pointer;font-weight:600;-webkit-tap-highlight-color:transparent}
 .rep-btn.active{background:#4a7cf0;color:#fff;border-color:#4a7cf0}
 .repeat-status{font-size:12px;color:#4a7cf0;font-weight:600;margin-left:auto}
+.speed-row{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
+.speed-label{font-size:12px;color:#888;font-weight:600}
+.speed-opts{display:flex;gap:6px;flex-wrap:wrap}
+.spd-btn{min-width:44px;padding:6px 10px;border:1px solid #ddd;border-radius:8px;background:#fff;font-size:13px;font-family:inherit;color:#555;cursor:pointer;font-weight:600;-webkit-tap-highlight-color:transparent}
+.spd-btn.active{background:#1e8449;color:#fff;border-color:#1e8449}
 .hl{background:#fff3cd;border-radius:3px;padding:1px 3px;cursor:pointer;font-weight:600;color:#92400e}
 .loading{text-align:center;padding:3rem 1rem;color:#aaa;font-size:14px}
 </style>
@@ -192,6 +197,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
         <div class="repeat-opts" id="repeat-opts"></div>
         <span class="repeat-status" id="repeat-status"></span>
       </div>
+      <div class="speed-row">
+        <span class="speed-label">Velocidade:</span>
+        <div class="speed-opts" id="speed-opts"></div>
+      </div>
       <div id="text-content"></div>
     </div>
   </div>
@@ -210,6 +219,10 @@ var repeatCount = 1;              // 1,2,3,5 ou Infinity
 var repeatOptions = [1, 2, 3, 5, Infinity];
 var repeatsDone = 0;
 var repeatTimer = null;
+
+// ── Velocidade do áudio ──
+var playSpeed = 1;
+var speedOptions = [0.5, 0.75, 1, 1.25, 1.5];
 
 // ═══ ÁUDIO ═══
 var audioEl = new Audio();
@@ -251,6 +264,7 @@ function toggleFullAudio(btn) {
   stopAll(null);
   var partId = PARTS[activePart].id;
   fullEl.src = AUDIO_URL + partId + "/full.mp3";
+  fullEl.playbackRate = playSpeed;
   fullPlaying = true;
   repeatsDone = 0;
   btn.classList.add("playing");
@@ -269,6 +283,7 @@ function onFullEnded(btn) {
     repeatTimer = setTimeout(function() {
       if (!fullPlaying) return;
       fullEl.currentTime = 0;
+      fullEl.playbackRate = playSpeed;
       fullEl.play().catch(function(){ stopFullAudio(); });
     }, 2000); // pausa de ~2s entre repetições
   } else {
@@ -529,6 +544,28 @@ function renderText() {
   div.querySelectorAll(".hl").forEach(function(el){ el.addEventListener("click",function(){ setSection("vocab"); setMode("cards"); goTo(parseInt(el.dataset.idx)); }); });
 }
 
+function setSpeed(val) {
+  playSpeed = val;
+  // aplica imediatamente se já estiver tocando
+  try { fullEl.playbackRate = val; } catch(e) {}
+  document.querySelectorAll(".spd-btn").forEach(function(b) {
+    b.classList.toggle("active", parseFloat(b.dataset.val) === val);
+  });
+}
+
+function buildSpeedButtons() {
+  var box = document.getElementById("speed-opts");
+  box.innerHTML = "";
+  speedOptions.forEach(function(val) {
+    var b = document.createElement("button");
+    b.className = "spd-btn" + (val === playSpeed ? " active" : "");
+    b.dataset.val = val;
+    b.textContent = (val === 1) ? "1x" : (String(val).replace(".", ",") + "x");
+    b.onclick = function(){ setSpeed(val); };
+    box.appendChild(b);
+  });
+}
+
 function buildRepeatButtons() {
   var box=document.getElementById("repeat-opts"); box.innerHTML="";
   repeatOptions.forEach(function(val){
@@ -543,6 +580,7 @@ function buildRepeatButtons() {
 
 function init() {
   buildRepeatButtons();
+  buildSpeedButtons();
   loadManifest().then(function() {
     var sel=document.getElementById("part-selector");
     PARTS.forEach(function(p,i){
