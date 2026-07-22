@@ -1,0 +1,124 @@
+{
+  "part": 8,
+  "title": "Jack Hannaford | Part 08",
+  "audioFull": "AUDIO_Completo_Jack_Hannaford_08_Natalie.mp3",
+  "fullText": "The farmer looked at the sky, but he could not see the amazing rainbow or the man walking on it. \u201cHere,\u201d said the soldier, \u201ckneel down by the side of the road and look up at the sky like I\u2019m doing.\u201d \u201cI will if you\u2019ll hold my horse,\u201d said the farmer, and he jumped down from his horse. As soon as the farmer knelt down, Jack Hannaford jumped onto the horse and escaped! Now, who do you think was more foolish, the farmer or his wife?",
+  "sentences": [
+    {
+      "id": 78,
+      "en": "The farmer looked at the sky,",
+      "pt": "O fazendeiro olhou para o c\u00e9u,",
+      "phonetic": "d\u00e2 F\u00c1R-mer L\u00daKT \u00e9t d\u00e2 SK\u00c1I",
+      "audio": "78_the_farmer_looked.mp3"
+    },
+    {
+      "id": 79,
+      "en": "but he could not see the amazing rainbow",
+      "pt": "mas ele n\u00e3o conseguiu ver o incr\u00edvel arco-\u00edris",
+      "phonetic": "b\u00e2t rri cud n\u00f3t S\u00cd d\u00e2 \u00e2-M\u00caI-zing R\u00caIN-bou",
+      "audio": "79_but_he_could_not.mp3"
+    },
+    {
+      "id": 80,
+      "en": "or the man walking on it.",
+      "pt": "ou o homem andando sobre ele.",
+      "phonetic": "\u00f3r d\u00e2 M\u00c9N U\u00d3-king \u00f3n it",
+      "audio": "80_or_the_man.mp3"
+    },
+    {
+      "id": 81,
+      "en": "\u201cHere,\u201d said the soldier,",
+      "pt": "\u201cAqui\u201d, disse o soldado,",
+      "phonetic": "RR\u00cd\u00e2r, s\u00e9d d\u00e2 S\u00d4UL-djer",
+      "audio": "81_here_said_the.mp3"
+    },
+    {
+      "id": 82,
+      "en": "\u201ckneel down by the side of the road\u201d",
+      "pt": "\u201cajoelhe-se ao lado da estrada\u201d",
+      "phonetic": "N\u00cdL D\u00c1UN bai d\u00e2 S\u00c1ID \u00f3v d\u00e2 R\u00d4UD",
+      "audio": "82_kneel_down_by.mp3"
+    },
+    {
+      "id": 83,
+      "en": "\u201cand look up at the sky like I\u2019m doing.\u201d",
+      "pt": "\u201ce olhe para o c\u00e9u como eu estou fazendo.\u201d",
+      "phonetic": "\u00e9nd L\u00daK \u00c2P \u00e9t d\u00e2 SK\u00c1I l\u00e1ik \u00e1im D\u00da-ing",
+      "audio": "83_and_look_up.mp3"
+    },
+    {
+      "id": 84,
+      "en": "\u201cI will if you\u2019ll hold my horse,\u201d said the farmer,",
+      "pt": "\u201cEu vou se voc\u00ea segurar meu cavalo\u201d, disse o fazendeiro,",
+      "phonetic": "\u00e1i U\u00cdL if i\u00fal RR\u00d4ULD m\u00e1i RR\u00d3RS, s\u00e9d d\u00e2 F\u00c1R-mer",
+      "audio": "84_I_will_if.mp3"
+    },
+    {
+      "id": 85,
+      "en": "and he jumped down from his horse.",
+      "pt": "e ele pulou do seu cavalo.",
+      "phonetic": "\u00e9nd rri DJ\u00c2MPT D\u00c1UN from rriz RR\u00d3RS",
+      "audio": "85_and_he_jumped.mp3"
+    },
+    {
+      "id": 86,
+      "en": "As soon as the farmer knelt down,",
+      "pt": "Logo que o fazendeiro ajoelhou-se,",
+      "phonetic": "\u00e9z S\u00daN \u00e9z d\u00e2 F\u00c1R-mer N\u00c9LT D\u00c1UN",
+      "audio": "86_as_soon_as.mp3"
+    },
+    {
+      "id": 87,
+      "en": "Jack Hannaford jumped onto the horse and escaped!",
+      "pt": "Jack Hannaford pulou no cavalo e escapou!",
+      "phonetic": "dj\u00e9k RR\u00c9-n\u00e2-ford DJ\u00c2MPT \u00d3N-tu d\u00e2 RR\u00d3RS \u00e9nd es-K\u00caIPT",
+      "audio": "87_jack_hannarford_jumped.mp3"
+    },
+    {
+      "id": 88,
+      "en": "Now, who do you think was more foolish, the farmer or his wife?",
+      "pt": "Agora, quem voc\u00ea acha que foi mais tolo, o fazendeiro ou sua esposa?",
+      "phonetic": "N\u00c1U, RR\u00da du i\u00fa TH\u00cdNK u\u00f3z M\u00d3R F\u00da-lish, d\u00e2 F\u00c1R-mer \u00f3r rriz U\u00c1IF",
+      "audio": "88_now_who_do_you.mp3"
+    }
+  ],
+  "vocabulary": [
+    { "en": "looked at", "pt": "olhou para", "phonetic": "L\u00daKT \u00e9t" },
+    { "en": "the sky", "pt": "o c\u00e9u", "phonetic": "d\u00e2 SK\u00c1I" },
+    { "en": "could not see", "pt": "n\u00e3o conseguiu ver", "phonetic": "cud n\u00f3t S\u00cd" },
+    { "en": "amazing", "pt": "incr\u00edvel", "phonetic": "\u00e2-M\u00caI-zing" },
+    { "en": "rainbow", "pt": "arco-\u00edris", "phonetic": "R\u00caIN-bou" },
+    { "en": "walking on it", "pt": "andando sobre ele", "phonetic": "U\u00d3-king \u00f3n it" },
+    { "en": "soldier", "pt": "soldado", "phonetic": "S\u00d4UL-djer" },
+    { "en": "kneel down", "pt": "ajoelhar-se", "phonetic": "N\u00cdL D\u00c1UN" },
+    { "en": "by the side of the road", "pt": "ao lado da estrada", "phonetic": "bai d\u00e2 S\u00c1ID \u00f3v d\u00e2 R\u00d4UD" },
+    { "en": "look up", "pt": "olhar para cima", "phonetic": "L\u00daK \u00c2P" },
+    { "en": "like I\u2019m doing", "pt": "como eu estou fazendo", "phonetic": "l\u00e1ik \u00e1im D\u00da-ing" },
+    { "en": "hold my horse", "pt": "segurar meu cavalo", "phonetic": "RR\u00d4ULD m\u00e1i RR\u00d3RS" },
+    { "en": "jumped down", "pt": "pulou para baixo / desceu de um pulo", "phonetic": "DJ\u00c2MPT D\u00c1UN" },
+    { "en": "as soon as", "pt": "logo que / assim que", "phonetic": "\u00e9z S\u00daN \u00e9z" },
+    { "en": "knelt down", "pt": "ajoelhou-se (passado de kneel)", "phonetic": "N\u00c9LT D\u00c1UN" },
+    { "en": "jumped onto", "pt": "pulou em cima de", "phonetic": "DJ\u00c2MPT \u00d3N-tu" },
+    { "en": "escaped", "pt": "escapou", "phonetic": "es-K\u00caIPT" },
+    { "en": "foolish", "pt": "tolo, bobo", "phonetic": "F\u00da-lish" },
+    { "en": "wife", "pt": "esposa", "phonetic": "U\u00c1IF" }
+  ],
+  "grammarNotes": [
+    {
+      "title": "As soon as",
+      "note": "Conector de tempo = \u201clogo que / assim que\u201d. Liga duas a\u00e7\u00f5es em sequ\u00eancia imediata: As soon as the farmer knelt down, Jack jumped onto the horse."
+    },
+    {
+      "title": "Kneel \u2192 knelt (verbo irregular)",
+      "note": "kneel / knelt / knelt. O \u201ck\u201d inicial \u00e9 mudo: NEEL, NELT."
+    },
+    {
+      "title": "Contra\u00e7\u00e3o you\u2019ll",
+      "note": "you\u2019ll = you will. \u201cI will if you\u2019ll hold my horse\u201d \u2014 aqui o will aparece na condicional (if) porque expressa disposi\u00e7\u00e3o/promessa, n\u00e3o apenas futuro."
+    },
+    {
+      "title": "Phrasal verbs com down/up/onto",
+      "note": "kneel down (ajoelhar), look up (olhar para cima), jump down (descer de um pulo), jump onto (pular em cima de). A prepos\u00edtion muda o sentido do movimento."
+    }
+  ]
+}
