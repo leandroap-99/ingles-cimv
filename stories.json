@@ -1,0 +1,6 @@
+{
+  "stories": [
+    { "id": "jack", "label": "Jack Hannaford", "data": "data/", "audio": "audio/" },
+    { "id": "endless", "label": "The Endless Tale", "data": "data-endless/", "audio": "audio-endless/" }
+  ]
+}
